@@ -21,39 +21,37 @@ public class ApiService {
      * 데이터 등록 시
      * @throws Exception
      */
-    public Object addData(Object data) throws Exception{
-        return data;
+    public void addData(Object data) throws Exception{
+
     }
 
     /**
      * 데이터 등록 또는 수정 시
      * @throws Exception
      */
-    public Object saveData(Object data) throws Exception{
-        return data;
+    public void saveData(Object data) throws Exception{
     }
 
     /**
      * 데이터 조회 시
      * @throws Exception
      */
-    public void getData() throws Exception{
-
+    public Object getData(String data) throws Exception{
+        return data;
     }
 
     /**
      * 데이터 수정 시
      * @throws Exception
      */
-    public void modData() throws Exception{
-
+    public void modData(Object data) throws Exception{
     }
 
     /**
      * 데이터 삭제 시
      * @throws Exception
      */
-    public void delDate() throws Exception{
+    public void delDate(Object data) throws Exception{
 
     }
 }

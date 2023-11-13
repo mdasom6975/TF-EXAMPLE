@@ -4,10 +4,7 @@ import com.example.tfexample.service.ApiService;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
 @RestController
@@ -32,13 +29,45 @@ public class ApiController {
     private final ApiService apiService;
 
     @PostMapping("postData")
-    @Operation(summary = "[TF-API-001] 데이터 생성(등록)")
+    @Operation(summary = "[TF-API-001] 데이터 등록", tags = {"1. 등록"})
     public Object postData(@RequestBody Object data) throws Exception{
+        Object objectData = null;
 
-        data = apiService.addData(data);
-        data = apiService.saveData(data);
+        apiService.addData(data);
+        apiService.saveData(data);
 
-        return data;
+        return objectData;
+    }
+
+    @GetMapping("getData")
+    @Operation(summary = "[TF-API-002] 데이터 조회", tags = {"2. 조회"})
+    public Object getData(@RequestParam String data) throws Exception{
+        Object objectData = null;
+
+        objectData = apiService.getData(data);
+
+        return objectData;
+    }
+
+    @PostMapping("putData")
+    @Operation(summary = "[TF-API-003] 데이터 수정", tags = {"3. 수정"})
+    public Object putData(@RequestBody Object data) throws Exception{
+        Object objectData = null;
+
+        apiService.modData(data);
+        apiService.saveData(data);
+
+        return objectData;
+    }
+
+    @PostMapping("deleteData")
+    @Operation(summary = "[TF-API-004] 데이터 삭제", tags = {"4. 삭제"})
+    public Object deleteData(@RequestBody Object data) throws Exception{
+        Object objectData = null;
+
+        apiService.delDate(data);
+
+        return objectData;
     }
 
 
