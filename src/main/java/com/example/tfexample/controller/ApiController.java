@@ -1,9 +1,9 @@
 package com.example.tfexample.controller;
 
 import com.example.tfexample.service.ApiService;
+import com.example.tfexample.vo.DataInfo;
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RequiredArgsConstructor
@@ -30,7 +30,7 @@ public class ApiController {
 
     @PostMapping("postData")
     @Operation(summary = "[TF-API-001] 데이터 등록", tags = {"1. 등록"})
-    public Object postData(@RequestBody Object data) throws Exception{
+    public Object postData(@RequestBody DataInfo data) throws Exception{
         Object objectData = null;
 
         apiService.addData(data);
@@ -51,7 +51,7 @@ public class ApiController {
 
     @PostMapping("putData")
     @Operation(summary = "[TF-API-003] 데이터 수정", tags = {"3. 수정"})
-    public Object putData(@RequestBody Object data) throws Exception{
+    public Object putData(@RequestBody DataInfo data) throws Exception{
         Object objectData = null;
 
         apiService.modData(data);
@@ -62,7 +62,7 @@ public class ApiController {
 
     @PostMapping("deleteData")
     @Operation(summary = "[TF-API-004] 데이터 삭제", tags = {"4. 삭제"})
-    public Object deleteData(@RequestBody Object data) throws Exception{
+    public Object deleteData(@RequestBody DataInfo data) throws Exception{
         Object objectData = null;
 
         apiService.delDate(data);

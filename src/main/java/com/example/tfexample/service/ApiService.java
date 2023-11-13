@@ -1,5 +1,6 @@
 package com.example.tfexample.service;
 
+import com.example.tfexample.vo.DataInfo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -13,7 +14,7 @@ public class ApiService {
      * R : get
      * U : mod , save
      * D : del
-     * insert / select / update / delete 와 같이 Query Id와 동일한 사용은 금한다.
+     * insert / select / update / delete 와 같이 Query Id와 동일한 서비스명은 사용을 금한다.
      */
 
 
@@ -21,7 +22,7 @@ public class ApiService {
      * 데이터 등록 시
      * @throws Exception
      */
-    public void addData(Object data) throws Exception{
+    public void addData(DataInfo data) throws Exception{
 
     }
 
@@ -29,7 +30,7 @@ public class ApiService {
      * 데이터 등록 또는 수정 시
      * @throws Exception
      */
-    public void saveData(Object data) throws Exception{
+    public void saveData(DataInfo data) throws Exception{
     }
 
     /**
@@ -44,14 +45,14 @@ public class ApiService {
      * 데이터 수정 시
      * @throws Exception
      */
-    public void modData(Object data) throws Exception{
+    public void modData(DataInfo data) throws Exception{
     }
 
     /**
      * 데이터 삭제 시
      * @throws Exception
      */
-    public void delDate(Object data) throws Exception{
+    public void delDate(DataInfo data) throws Exception{
 
     }
 }
