@@ -1,2 +1,5 @@
-package com.example.tfexample.mapper;public interface ApiMapper {
+package com.example.tfexample.mapper;
+
+public interface ApiMapper {
+
 }

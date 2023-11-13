@@ -12,53 +12,17 @@ server:
       rotate: true
       suffix: .log
   servlet:
-    contextPath: /tutor
+    contextPath: /
     session:
       timeout: 14400
 
 spring:
-  mvc:
-    # jsp 설정
-    view:
-      prefix: /WEB-INF/views/
-      suffix: .jsp
-      
-    pathmatch:
-      matching-strategy: ant-path-matcher
-  
   config:
     useLegacyProcessing: true
-  
-  # 파일 저장
-  servlet:
-    multipart:
-      max-file-size: 200MB
-      max-request-size: 200MB
 
-  # ajax 호출 시 기본 타임존 설정
-  jackson:
-    deserialization:
-      adjust-dates-to-context-time-zone: false
-    time-zone: Asia/Seoul
-
-# mybatis
-mybatis:
-  typeAliasesPackage: com.kyowon.sks.tutor.vo
-  mapperLocations: mapper/*Mapper.xml
-  configuration: 
-    cacheEnabled: false
-    lazyLoadingEnabled: false
-    multipleResultSetsEnabled: true
-    useColumnLabel: true
-    defaultStatementTimeout: 25000
-    defaultExecutorType: REUSE
-    mapUnderscoreToCamelCase: true
-    jdbcTypeForNull: "NULL"
-    call-setters-on-nulls: true
-    
 # Swagger
 springdoc:
-  packages-to-scan: com.kyowon.sks.tutor
+  packages-to-scan: com.example.tfexample
   default-consumes-media-type: application/json;charset=UTF-8
   default-produces-media-type: application/json;charset=UTF-8
   swagger-ui:
@@ -71,9 +35,3 @@ springdoc:
       enabled: true
   cache:
     disabled: true
-
-# token
-crypto:
-  algorithm: AES
-  transformation: AES/ECB/PKCS5Padding
-  key: kumonict12345678
