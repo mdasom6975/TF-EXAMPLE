@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ApiService {
 
-    private final ApiMapper apiMapper;
+    //private final ApiMapper apiMapper;
 
     /**
      * Service Class 작성 시
@@ -26,7 +26,7 @@ public class ApiService {
      * @throws Exception
      */
     public void addData(DataInfo data) throws Exception{
-        apiMapper.insertDate(data);
+        //apiMapper.insertDate(data);
     }
 
     /**
@@ -34,7 +34,7 @@ public class ApiService {
      * @throws Exception
      */
     public void saveData(DataInfo data) throws Exception{
-        apiMapper.updateDate(data);
+        //apiMapper.updateDate(data);
     }
 
     /**
@@ -42,7 +42,9 @@ public class ApiService {
      * @throws Exception
      */
     public DataInfo getData(String data) throws Exception{
-        return apiMapper.selectDate(data);
+        DataInfo dataInfo = new DataInfo();
+        //return apiMapper.selectDate(data);
+        return dataInfo;
     }
 
     /**
@@ -50,7 +52,7 @@ public class ApiService {
      * @throws Exception
      */
     public void modData(DataInfo data) throws Exception{
-        apiMapper.updateDate(data);
+        //apiMapper.updateDate(data);
     }
 
     /**
@@ -58,6 +60,6 @@ public class ApiService {
      * @throws Exception
      */
     public void delDate(DataInfo data) throws Exception{
-        apiMapper.deleteDate(data);
+        //apiMapper.deleteDate(data);
     }
 }
